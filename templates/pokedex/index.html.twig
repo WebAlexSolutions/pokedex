@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="text-center text-white mt-4">
+		<h2>
+            <i class="bi bi-collection"></i> Pokédex — {{ total }} Pokémon
+		</h2>
+
+		<div class="mt-3 d-flex justify-content-center align-items-center gap-4">
+			<a href="?lang=fr" class="lang-flag {% if lang == 'fr' %}active{% endif %}" title="Français">
+				<img src="https://flagcdn.com/w40/fr.png" alt="Français" width="40" height="28">
+			</a>
+			<a href="?lang=en" class="lang-flag {% if lang == 'en' %}active{% endif %}" title="English">
+				<img src="https://flagcdn.com/w40/gb.png" alt="English" width="40" height="28">
+			</a>
+		</div>
+
+		<div class="pokedex mt-3">
+			<div class="leds">
+				<div class="led red"></div>
+				<div class="led green"></div>
+				<div class="led blue"></div>
+			</div>
+
+			<div class="screen">
+				<div class="crt-boot"></div>
+				<div class="boot-logo" id="boot-logo">
+                    <span class="boot-text">🔧 Chargement en cours...</span>
+                </div>
+				<div class="pokemon-display text-center fade-in" id="pokemon-display">
+					<img id="pokemon-image" src="" alt="Pokemon">
+                    <h3 id="pokemon-id" class="text-white">#---</h3>
+					<h3 id="pokemon-name" class="mt-2">---</h3>
+					<span id="pokemon-type" class="badge bg-secondary">---</span>
+					<div id="pokemon-stats" class="stats mt-2">---</div>
+				</div>
+			</div>
+
+		<!--<div class="buttons">
+			<button class="round-btn btn-blue"></button>
+			<button class="round-btn btn-yellow"></button>
+			<button class="round-btn btn-green"></button>
+		</div>-->
+
+		<div class="controls">
+			<button class="btn btn-dark" onclick="prevPokemon()">
+				<i class="bi bi-arrow-up"></i>
+			</button>
+			<button class="btn btn-dark" onclick="nextPokemon()">
+				<i class="bi bi-arrow-down"></i>
+			</button>
+		</div>
+
+		<div class="search-bar input-group mt-3">
+			<input type="text" class="form-control" id="search-input" placeholder="Rechercher...">
+			<button class="btn btn-dark" onclick="searchPokemon()">
+				<i class="bi bi-search"></i>
+			</button>
+		</div>
+	</div>
+
+	<audio id="boot-sound" src="{{ asset('assets/beep.mp3') }}"></audio>
+
+	<script>
+		document.documentElement.lang = "{{ lang }}";
+
+        window.pokemons = [{% for p in pokemons %}
+        {
+            id: {{ p.id }},
+            name: "{{ p.name }}",
+            nameFr: "{{ p.nameFr|e('js') }}",
+            type: "{{ p.type }}",
+            typeFr: "{{ p.typeFr|e('js') }}",
+            sprite: "{{ p.sprite }}",
+            hp: {{ p.hp }},
+            attack: {{ p.attack }},
+            defense: {{ p.defense }}
+        }
+        {% if not loop.last %},{% endif %}{% endfor %}];
+	</script>
+{% endblock %}
