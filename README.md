@@ -4,6 +4,7 @@
 ![API Platform](https://img.shields.io/badge/API%20Platform-3.x-2f95ff?style=for-the-badge&logo=apachespark)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.x-7952B3?style=for-the-badge&logo=bootstrap)
 ![PHP](https://img.shields.io/badge/PHP-8.3-777BB4?style=for-the-badge&logo=php)
+![License MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge&logo=open-source-initiative)
 ![Made by WebAlex Solutions](https://img.shields.io/badge/Made%20by-WebAlex%20Solutions-f1c40f?style=for-the-badge)
 
 ---
@@ -192,3 +193,13 @@ Voici les prochaines étapes prévues pour le projet **Pokédex Rétro** 👇
 Développé avec ❤️ par WebAlex Solutions
 
 “Attrapez-les tous — version Symfony !”
+
+---
+---
+
+## ⚖️ Licence
+
+Ce projet est distribué sous licence **MIT**.  
+Tu peux l’utiliser, le modifier et le redistribuer librement, tant que la mention du copyright est conservée.
+
+📄 Fichier : [`LICENSE`](LICENSE)
