@@ -2,10 +2,24 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\ApiFilter;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 use App\Repository\PokemonRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PokemonRepository::class)]
+#[ApiResource(
+    description: 'Représente un Pokémon du Pokédex complet (FR/EN)',
+    paginationEnabled: true,
+    paginationItemsPerPage: 20,
+)]
+#[ApiFilter(SearchFilter::class, properties: [
+    'name' => 'partial',
+    'nameFr' => 'partial',
+    'type' => 'partial',
+    'typeFr' => 'partial'
+])]
 class Pokemon
 {
     #[ORM\Id]
@@ -50,7 +64,6 @@ class Pokemon
     public function setName(string $name): static
     {
         $this->name = $name;
-
         return $this;
     }
 
@@ -62,7 +75,6 @@ class Pokemon
     public function setType(string $type): static
     {
         $this->type = $type;
-
         return $this;
     }
 
@@ -74,7 +86,6 @@ class Pokemon
     public function setHp(int $hp): static
     {
         $this->hp = $hp;
-
         return $this;
     }
 
@@ -86,7 +97,6 @@ class Pokemon
     public function setAttack(int $attack): static
     {
         $this->attack = $attack;
-
         return $this;
     }
 
@@ -98,7 +108,6 @@ class Pokemon
     public function setDefense(int $defense): static
     {
         $this->defense = $defense;
-
         return $this;
     }
 
@@ -110,7 +119,6 @@ class Pokemon
     public function setSprite(?string $sprite): static
     {
         $this->sprite = $sprite;
-
         return $this;
     }
 
@@ -122,7 +130,6 @@ class Pokemon
     public function setNameFr(string $nameFr): static
     {
         $this->nameFr = $nameFr;
-
         return $this;
     }
 
@@ -134,7 +141,6 @@ class Pokemon
     public function setTypeFr(string $typeFr): static
     {
         $this->typeFr = $typeFr;
-
         return $this;
     }
 }

@@ -1,7 +1,21 @@
 api_platform:
-    title: Hello API Platform
-    version: 1.0.0
+    title: 'Pokédex API'
+    description: |
+        API publique du Pokédex rétro développée avec Symfony 7.3.x  
+        💻 Développée par **WebAlex Solutions**
+
+        Fournit les données complètes des Pokémon (FR/EN), avec pagination, filtrage et versionnage.
+    version: '1.0.0'
+
     defaults:
-        stateless: true
-        cache_headers:
-            vary: ['Content-Type', 'Authorization', 'Origin']
+        pagination_items_per_page: 20
+        route_prefix: 'v1'
+
+    path_segment_name_generator: 'api_platform.path_segment_name_generator.underscore'
+
+    swagger:
+        api_keys: []
+        swagger_ui_extra_configuration:
+            docExpansion: list
+            displayRequestDuration: true
+            customSiteTitle: "Pokédex API — WebAlex Solutions"
