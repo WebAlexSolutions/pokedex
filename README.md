@@ -190,11 +190,11 @@ Voici les prochaines étapes prévues pour le projet **Pokédex Rétro** 👇
 
 ## 🧑‍💻 Crédits
 
-Développé avec ❤️ par WebAlex Solutions
+Développé avec ❤️ par **WebAlex Solutions**  
+👨‍💻 _Alexoune001 (Alexandre P.)_
 
 “Attrapez-les tous — version Symfony !”
 
----
 ---
 
 ## ⚖️ Licence
