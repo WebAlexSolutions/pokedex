@@ -1,4 +1,4 @@
-# 🧩 Pokédex — Symfony 7.3.x + API Platform + Bootstrap 5.3.x
+## 🧩 Pokédex — Symfony 7.3.x + API Platform + Bootstrap 5.3.x
 
 ![Symfony](https://img.shields.io/badge/Symfony-7.3.x-111827?style=for-the-badge&logo=symfony)
 ![API Platform](https://img.shields.io/badge/API%20Platform-3.x-2f95ff?style=for-the-badge&logo=apachespark)
